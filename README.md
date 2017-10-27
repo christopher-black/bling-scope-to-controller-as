@@ -18,3 +18,22 @@ myApp.controller('GreetController', function($scope){
     }
 });
 ```
+
+
+## controller as
+
+The `controller as` syntax attaches properties and functions to an object that is shared between the controller and HTML. In this case, we're calling that object `greet`. We must use `<div ng-controller="GreetController as greet">` when referencing our controller in the HTML.
+
+```JavaScript
+var myApp = angular.module('myApp', []);
+
+myApp.controller('GreetController', function(){
+    var greet = this;
+    greet.person = '';
+    greet.message = '';
+
+    greet.greetPerson = function (personToGreet) {
+        greet.message = 'Hello ' + personToGreet + '!';
+    }
+});
+```

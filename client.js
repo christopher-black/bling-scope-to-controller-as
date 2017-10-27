@@ -1,10 +1,11 @@
 var myApp = angular.module('myApp', []);
 
-myApp.controller('GreetController', function($scope){
-    $scope.person = '';
-    $scope.message = '';
+myApp.controller('GreetController', function(){
+    var greet = this;
+    greet.person = '';
+    greet.message = '';
 
-    $scope.greetPerson = function (personToGreet) {
-        $scope.message = 'Hello ' + personToGreet + '!';
+    greet.greetPerson = function (personToGreet) {
+        greet.message = 'Hello ' + personToGreet + '!';
     }
 });
